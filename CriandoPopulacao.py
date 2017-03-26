@@ -1,14 +1,8 @@
 import numpy as np
 
-def inicializarIndividuo(tamanho):
-    for x in range(0, tamanho):
-        print "             We're on time %d" %(x)
-
-
-
 print("iniciando inviduo")
 print("-----------------")
-#inicializarIndividuo(5)
+
 
 populacao = np.random.randint(2, size=(20,12))
 print populacao
