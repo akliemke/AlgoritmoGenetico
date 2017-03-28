@@ -4,7 +4,7 @@ print("iniciando inviduo")
 print("-----------------")
 
 
-populacao = np.random.randint(2, size=(20,12))
+populacao = np.random.randint(2, size=(50,12))
 print populacao
 print "-------------"
 print "Individuo 00:"
