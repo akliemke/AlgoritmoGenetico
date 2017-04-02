@@ -21,46 +21,32 @@ def calculaApitdaoOrdena(n):
     valoresFitness.sort(key=itemgetter(1), reverse=True)
 
 print populacao
-
+print ("------")
 calculaApitdaoOrdena(n)
 
 crossOver_random = 0
 resto = 0
 
-for i in range(2):
+for i in range(4):
     if i < 1 or i % 2 == 0:
+        filho = []
         crossOver_random = np.random.randint(11)
         resto = 11 - crossOver_random
-        #print ("Ponto crossover pai: %d" % crossOver_random )
-        #print ("Ponto crossover mae: %d" % resto )
-        #print ("pai, valor de i: %d" % i)
         for p in range(crossOver_random):
-            #print populacao[valoresFitness[i][0]][p]
             filho.append(populacao[valoresFitness[i][0]][p])
     else:
-        #print ("Ponto crossover pai: %d" % crossOver_random )
-        #print ("Ponto crossover mae: %d" % resto )
-        #print ("mae, valor de i: %d" % i)
         for m in range(resto+1):
             va =  crossOver_random + m
-            #print ("Posisao: %d" % va )
-            #print ("Item: %d" % populacao[valoresFitness[i][0]][va] )
             filho.append(populacao[valoresFitness[i][0]][va])
 
-
-filhos.append(filho)
-
-print ("-------------------")
-
-
-#print ("--------------")
-#print ("Primeiro Valor")
-#print valoresFitness[0]
-print populacao[valoresFitness[0][0]]
-#print ("--------------")
-#print ("Segundo Valor")
-#print valoresFitness[1]
-print populacao[valoresFitness[1][0]]
-print ("--------------")
+        filhos.append(filho)
 
 print filhos
+print ("------")
+print filhos[0]
+print ("------")
+populacao = np.delete(populacao, (0), axis=0)
+print populacao
+print ("------")
+np.append(populacao,filhos[0])
+print populacao
