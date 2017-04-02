@@ -2,23 +2,28 @@ import numpy as np
 from operator import itemgetter
 
 valoresFitness = []
-filho  = []
-filho2 = []
+populacao_nova = []
+populacao      = []
+filho          = []
+filho2         = []
 
-n = 5
-populacao = np.random.randint(2, size=(n,12))
+n = 10
+
+populacao = np.random.randint(5, size=(n,12))
 
 # funcao teste para calculo de apitdao
-def calculaApitdao(n):
+def calculaApitdaoOrdena(n):
     for x in range(n):
         valoresFitness.append(np.append(x,np.sum(populacao[x])))
     valoresFitness.sort(key=itemgetter(1), reverse=True)
-    return valoresFitness
-
-#def selecao(populacao, valoresFitness):
-
 
 print populacao
 
-calculaApitdao(n)
+calculaApitdaoOrdena(n)
 print valoresFitness
+
+for i in range(n):
+    print populacao[valoresFitness[i][0]]
+    print populacao[valoresFitness[i][0]]
+    print populacao[valoresFitness[i][0]][0]
+    print valoresFitness[i][1]
