@@ -1,6 +1,6 @@
 import numpy as np
 import time
-from operator import itemgetter
+from operator import itemgetter 
 # necessario para suprimir a notacao
 np.set_printoptions(suppress=True)
 print("iniciando inviduo")
