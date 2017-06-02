@@ -16,5 +16,5 @@ def roleta(valoresFitness):
             valoresFitness[e][3] = valoresFitness[e][2] + valoresFitness[e][3]
         else:
             valoresFitness[e][3] = valoresFitness[e][2] + valoresFitness[e-1][3]
-
+        
     return fitnessTotal
