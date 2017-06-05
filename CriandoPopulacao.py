@@ -1,6 +1,6 @@
 import numpy as np
 import time
-from operator import itemgetter 
+from operator import itemgetter
 # necessario para suprimir a notacao
 np.set_printoptions(suppress=True)
 print("iniciando inviduo")
@@ -36,9 +36,9 @@ populacao = []
 #individuo = np.random.randint(2, size=(3,12))
 #individuo2 = np.random.randint(2, size=(3,12))
 
-
-individuo  = np.zeros(shape=(3,8))
-individuo2 = np.zeros(shape=(3,8))
+numeroViagens = 5
+individuo  = np.zeros(shape=(numeroViagens,8))
+individuo2 = np.zeros(shape=(numeroViagens,8))
 
 
 
@@ -92,14 +92,16 @@ for indivi in range(2):
 print populacao
 soma =  np.sum(populacao[0], axis=0)
 arr = []
+print soma
 for x in range(2):
     soma =  np.sum(populacao[x], axis=0)
     arr.append([x, soma[7], 0.0, 0.0])
 arr.sort(key=itemgetter(1), reverse=True)
 
-print arr
+print soma
+#print arr
 print "-------------"
-print soma[7]
+#print soma[7]
 #print populacao[0][0]
 #print "-------------"
 #print populacao[0][0][0]
